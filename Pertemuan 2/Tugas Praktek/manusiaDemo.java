@@ -13,8 +13,8 @@ public class manusiaDemo{
 }
 
 class manusia{
-	String nama;
-	boolean punyaTV;
+	private String nama;
+	private boolean punyaTV;
 	
 	public manusia(){
 		nama = "noname";
