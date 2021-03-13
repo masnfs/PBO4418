@@ -19,6 +19,15 @@ public class TestTV{
 		" Nyala: " + tv2.onNow + 
 		"| Channel: " + tv2.channelNow + 
 		"| Volume: " + tv2.volumeLevelNow);
+		
+		manusia man1 = new manusia("Eriek");
+		System.out.println(man1.namaSaya());
+		
+		TV tvku = new TV();
+		man1.beliTV(tvku);
+		System.out.println(man1.cekTV());
+		man1.jualSemuaTV();
+		System.out.println(man1.cekTV());
 	}
 }
 
@@ -79,5 +88,34 @@ class TV{
 		if (channelNow < 0){
 			channelNow = 0;
 		}
+	}
+}
+
+class manusia{
+	private String nama;
+	private boolean punyaTV;
+	
+	public manusia(){
+		nama = "noname";
+	}
+	
+	public manusia(String newName){
+		nama = newName;
+	}
+	
+	public String namaSaya(){
+		return nama;
+	}
+	
+	public void beliTV(TV tiviku){
+		punyaTV = true;
+	}
+	
+	public void jualSemuaTV(){
+		punyaTV = false;
+	}
+	
+	public boolean cekTV(){
+		return punyaTV;
 	}
 }
