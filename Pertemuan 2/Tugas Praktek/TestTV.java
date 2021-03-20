@@ -24,10 +24,10 @@ public class TestTV{
 		System.out.println(man1.namaSaya());
 		
 		TV tvku = new TV();
-		man1.beliTV(tvku);
-		System.out.println(man1.cekTV());
-		man1.jualSemuaTV();
-		System.out.println(man1.cekTV());
+		man1.buyTV(tvku);
+		System.out.println(man1.checkTV());
+		man1.sellAllTV();
+		System.out.println(man1.checkTV());
 	}
 }
 
@@ -93,7 +93,7 @@ class TV{
 
 class manusia{
 	private String nama;
-	private boolean punyaTV;
+	private boolean hasTV;
 	
 	public manusia(){
 		nama = "noname";
@@ -107,15 +107,15 @@ class manusia{
 		return nama;
 	}
 	
-	public void beliTV(TV tiviku){
-		punyaTV = true;
+	public void buyTV(TV tiviku){
+		hasTV = true;
 	}
 	
-	public void jualSemuaTV(){
-		punyaTV = false;
+	public void sellAllTV(){
+		hasTV = false;
 	}
 	
-	public boolean cekTV(){
-		return punyaTV;
+	public boolean checkTV(){
+		return hasTV;
 	}
 }
