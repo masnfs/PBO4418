@@ -57,37 +57,36 @@ public class GameEnvironment {
     public void Interaction(){
         if (arrPlayer == null || arrEnemy == null){
             System.out.println("Player or Enemy not Set");
-        } else {
-            for (int i = 0; i < arrPlayer.size(); i++){
-                for (int j = 0; j < arrEnemy.size(); j++){
-                    if (arrPlayer.get(i).gettheY() != arrEnemy.get(j).gettheY()){
-                        System.out.println("Player: " + arrPlayer.get(i) + " and Enemy: " + arrEnemy.get(j) + " not in the same Y position");
-                    }
-                    
-                    // Tho it shows < 2, actually it's fukin > 200, i fried my brain over this shit
-                    // or maybe the formula is fukin wrong from the code that professor wrote
-                    if (EuclideanDistance(arrPlayer.get(i).gettheX(), arrPlayer.get(i).gettheY(), arrEnemy.get(j).gettheX(), arrEnemy.get(j).gettheY()) < 200){
-                        System.out.println("Player: " + arrPlayer.get(i) + " Attacked");
-                        System.out.println("Enemy: " + arrEnemy.get(j) + " loses");
-                        removeEnemy(arrEnemy.get(j));
-                    } else {
-                        System.out.println("==> Player "+arrPlayer.get(i));
-                        arrPlayer.get(i).Run((int)Math.ceil(Math.random()*10));
-                        System.out.println("current x position =  " + arrPlayer.get(i).gettheX() +" <==");
-                    }
-                    
+        }
+        for (int i = 0; i < arrPlayer.size(); i++){
+            for (int j = 0; j < arrEnemy.size(); j++){
+                if (arrPlayer.get(i).gettheY() != arrEnemy.get(j).gettheY()){
+                    System.out.println("Player: " + arrPlayer.get(i) + " and Enemy: " + arrEnemy.get(j) + " not in the same Y position");
                 }
+                    
+                if (EuclideanDistance(arrPlayer.get(i).gettheX(), arrPlayer.get(i).gettheY(), arrEnemy.get(j).gettheX(), arrEnemy.get(j).gettheY()) < 2){
+                    System.out.println("Player: " + arrPlayer.get(i) + " Attacked");
+                    System.out.println("Enemy: " + arrEnemy.get(j) + " loses");
+                    removeEnemy(arrEnemy.get(j));
+                } else {
+                    System.out.println("==> Player "+arrPlayer.get(i));
+                    arrPlayer.get(i).Run((int)Math.ceil(Math.random()*10));
+                    System.out.println("current x position =  " + arrPlayer.get(i).gettheX() +" <==");
+                }   
             }
         }
     }
     
+    
     public double EuclideanDistance(int x1, int y1, int x2, int y2){
+        /*
         int ycoord = y2 - y1;
         int xcoord = x2 - x1;
         double result =  Math.sqrt(((ycoord)*(ycoord)) + ((xcoord)*(xcoord)));
         return result;
-
-        //return (int) Math.sqrt( ((Math.pow(x2 - x1, 2)) + (Math.pow(y2 - y1, 2))));
+        */
+        
+        return (int) Math.sqrt( Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
     
 }
