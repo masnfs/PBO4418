@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vehicleinherit;
+package polymorphismklass;
 
 /**
  *
@@ -24,5 +24,6 @@ public class TestDemo {
         System.out.println(moto.sizeofEngine);
         System.out.println(moto.getLicensePlate());
         System.out.println(moto.getSizeofEngine());
+        System.out.println("=============");
     }
 }
