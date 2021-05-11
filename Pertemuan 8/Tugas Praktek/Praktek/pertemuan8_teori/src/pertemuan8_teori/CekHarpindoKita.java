@@ -27,6 +27,8 @@ public class CekHarpindoKita {
         // beli satu ajalah banyak2 mobil bikin sempit aja
         //Cek untung karyawan1
         pembeli_individu.buyCar(mobil_sedan, karyawan1);
+        pembeli_individu.buyCar(mobil_sedan, karyawan1);
+        pembeli_individu.buyCar(mobil_minibus, karyawan1);
         System.out.println(karyawan1.untung);
         
         //Cek pembeli_borongan membeli mobil
@@ -34,6 +36,7 @@ public class CekHarpindoKita {
         pembeli_borongan.buyCar(mobil_bus, karyawan2);
         pembeli_borongan.buyCar(mobil_bus, karyawan2);
         pembeli_borongan.buyCar(mobil_bus, karyawan2);
+        pembeli_borongan.buyCar(mobil_minibus, karyawan2);
         System.out.println(karyawan2.untung);
         
         

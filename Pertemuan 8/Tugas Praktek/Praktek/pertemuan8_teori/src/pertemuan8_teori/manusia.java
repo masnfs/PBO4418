@@ -104,8 +104,19 @@ class pembeli implements manusia, role_pembeli{
     }
     
     public void buyCar(Mobil mobil, karyawan Karyawan){
-        belanjaan.add(mobil);
-        Karyawan.untung += mobil.getHarga() * 0.1;
+        
+        if (belanjaan.isEmpty()){
+            belanjaan.add(mobil);
+            Karyawan.untung += mobil.getHarga() * 0.1;
+        } else if (mobil.getTipe() == belanjaan.get(0).getTipe() && tipe == "Pembeli Individu"){
+            belanjaan.add(mobil);
+            Karyawan.untung += mobil.getHarga() * 0.1;
+        } else if (tipe == "Pembeli Borongan"){
+            belanjaan.add(mobil);
+            Karyawan.untung += mobil.getHarga() * 0.1;
+        } else {
+            System.out.println("Hanya dapat membeli satu tipe mobil!");
+        }
     }
     
     public ArrayList cekBelanjaan(){
@@ -170,8 +181,19 @@ class pembeli2 extends pembeli{
     }
     
     public void buyCar(Mobil mobil, karyawan Karyawan){
-        belanjaan.add(mobil);
-        Karyawan.untung += mobil.getHarga() / 0.1;
+        
+        if (belanjaan.isEmpty()){
+            belanjaan.add(mobil);
+            Karyawan.untung += mobil.getHarga() * 0.1;
+        } else if (mobil.getTipe() == belanjaan.get(0).getTipe() && tipe == "Pembeli Individu"){
+            belanjaan.add(mobil);
+            Karyawan.untung += mobil.getHarga() * 0.1;
+        } else if (tipe == "Pembeli Borongan"){
+            belanjaan.add(mobil);
+            Karyawan.untung += mobil.getHarga() * 0.1;
+        } else {
+            System.out.println("Hanya dapat membeli satu tipe mobil!");
+        }
     }
     
     public ArrayList cekBelanjaan(){
